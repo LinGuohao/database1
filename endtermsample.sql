@@ -105,6 +105,8 @@ begin
 end;
 /
 
+drop function getsum;
+
 create or replace function getsum(n number) return number is
 res number:=0;
 tmp varchar2(50):= to_char(n);
@@ -155,7 +157,8 @@ select get_emp_info(7839) from dual;
 Using the table nikovits.par, write an SQL query which finds all the cousins of child ?k¡±.
 Create the Cousins relation using recursion rules. 
 */
+drop table par;
+create table par as select * from nikovits.PARENTOF;
 
-create table par as select * from nikovits.par;
-
+select * from par;
             
